@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OpenWrt
+name: Build Newifi-D2 OpenWrt
 
 on:
   repository_dispatch:
@@ -18,19 +18,41 @@ on:
         description: 'SSH connection to Actions'
         required: false
         default: 'false'
+      UPLOAD_COWTRANSFER:
+        description: 'upload to cowTransfer'
+        required: false
+        default: 'false'
+      UPLOAD_WETRANSFER:
+        description: 'upload to weTransfer'
+        required: false
+        default: 'false'
+      UPLOAD_FIRMWARE:
+        description: 'upload firmware to Github Action output'
+        required: false
+        default: 'true'
+      UPLOAD_BIN_DIR:
+        description: 'upload .\bin dir to Github Action output'
+        required: false
+        default: 'false'
+      UPLOAD_RELEASE:
+        description: 'upload file to Github releases'
+        required: false
+        default: 'false'
+#  schedule:
+#    - cron: 0 8 */5 * *
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: .config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
-  UPLOAD_BIN_DIR: false
-  UPLOAD_FIRMWARE: true
-  UPLOAD_COWTRANSFER: false
-  UPLOAD_WETRANSFER: false
-  UPLOAD_RELEASE: false
+  CONFIG_FILE: configs/d2.config
+  DIY_P1_SH: SH_P1/diy-part1.sh
+  DIY_P2_SH: SH_P2/diy-part2-d2.sh
+  UPLOAD_BIN_DIR: github.event.inputs.UPLOAD_BIN_DIR
+  UPLOAD_FIRMWARE: github.event.inputs.UPLOAD_FIRMWARE
+  UPLOAD_COWTRANSFER: github.event.inputs.UPLOAD_COWTRANSFER
+  UPLOAD_WETRANSFER: github.event.inputs.UPLOAD_WETRANSFER
+  UPLOAD_RELEASE: github.event.inputs.UPLOAD_RELEASE
   TZ: Asia/Shanghai
 
 jobs:
@@ -61,9 +83,15 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
+    - name: Cache
+      uses: klever1988/cachewrtbuild@main
+      with:
+        ccache: 'true'
+        prefix: ${{ github.workspace }}/openwrt
+
     - name: Load custom feeds
       run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
+        [ -e $FEEDS_CONF ] && cp $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
@@ -76,8 +104,8 @@ jobs:
 
     - name: Load custom configuration
       run: |
-        [ -e files ] && mv files openwrt/files
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        [ -e files ] && cp files openwrt/files
+        [ -e $CONFIG_FILE ] && cp $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
