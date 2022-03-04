@@ -29,11 +29,11 @@ on:
       UPLOAD_FIRMWARE:
         description: 'upload firmware to Github Action output'
         required: false
-        default: 'true'
+        default: 'false'
       UPLOAD_BIN_DIR:
         description: 'upload .\bin dir to Github Action output'
         required: false
-        default: 'false'
+        default: 'true'
       UPLOAD_RELEASE:
         description: 'upload file to Github releases'
         required: false
