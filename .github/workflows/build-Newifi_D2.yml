@@ -41,7 +41,7 @@ on:
       DIY_P1_SH:
         description: 'choose which DIY_P1 file to use'
         required: false
-        default: 'SH_P1/diy-part2-d1.sh'
+        default: 'SH_P1/diy-part1.sh'
       DIY_P2_SH:
         description: 'choose which DIY_P2 file to use'
         required: false
