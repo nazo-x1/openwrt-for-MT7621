@@ -38,14 +38,14 @@ on:
         description: 'upload file to Github releases'
         required: false
         default: 'false'
+      DIY_P1_SH:
+        description: 'choose which DIY_P1 file to use'
+        required: false
+        default: 'SH_P1/diy-part1.sh'
       DIY_P2_SH:
         description: 'choose which DIY_P2 file to use'
         required: false
         default: 'SH_P2/diy-part2.sh'
-      DIY_P1_SH:
-        description: 'choose which DIY_P2 file to use'
-        required: false
-        default: 'SH_P1/diy-part1.sh'
       CONFIG_FILE:
         description: 'choose which DIY_P2 file to use'
         required: false
