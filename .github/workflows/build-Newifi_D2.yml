@@ -21,11 +21,11 @@ on:
       UPLOAD_COWTRANSFER:
         description: 'upload to cowTransfer'
         required: false
-        default: 'false'
+        default: 'true'
       UPLOAD_WETRANSFER:
         description: 'upload to weTransfer'
         required: false
-        default: 'false'
+        default: 'true'
       UPLOAD_FIRMWARE:
         description: 'upload firmware to Github Action output'
         required: false
@@ -45,7 +45,7 @@ on:
       CONFIG_FILE:
         description: 'choose which DIY_P2 file to use'
         required: false
-        default: '.config'
+        default: 'config/d2.config'
 #  schedule:
 #    - cron: 0 8 */5 * *
 
