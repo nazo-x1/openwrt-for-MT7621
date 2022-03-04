@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build Newifi-D2 OpenWrt
+name: Gen OpenWrt Config
 
 on:
   repository_dispatch:
