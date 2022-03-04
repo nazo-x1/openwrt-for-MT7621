@@ -42,6 +42,10 @@ on:
         description: 'choose which DIY_P2 file to use'
         required: false
         default: 'SH_P2/diy-part2.sh'
+      DIY_P1_SH:
+        description: 'choose which DIY_P2 file to use'
+        required: false
+        default: 'SH_P1/diy-part1.sh'
       CONFIG_FILE:
         description: 'choose which DIY_P2 file to use'
         required: false
@@ -54,7 +58,7 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: github.event.inputs.CONFIG_FILE
-  DIY_P1_SH: SH_P1/diy-part1.sh
+  DIY_P1_SH: github.event.inputs.DIY_P1_SH
   DIY_P2_SH: github.event.inputs.DIY_P2_SH
   UPLOAD_BIN_DIR: github.event.inputs.UPLOAD_BIN_DIR
   UPLOAD_FIRMWARE: github.event.inputs.UPLOAD_FIRMWARE
