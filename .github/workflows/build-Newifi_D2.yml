@@ -41,7 +41,7 @@ on:
       DIY_P2_SH:
         description: 'choose which DIY_P2 file to use'
         required: false
-        default: 'SH_P2/diy-part2.sh'
+        default: 'SH_P2/diy-part2-d2.sh'
       CONFIG_FILE:
         description: 'choose which DIY_P2 file to use'
         required: false
