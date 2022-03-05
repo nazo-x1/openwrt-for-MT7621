@@ -80,8 +80,6 @@ rm -rf feeds/luci/applications/luci-app-pushbot
 
 # Add smartdns
 rm -rf feeds/packages/net/smartdns
-#svn co https://github.nazo.com/immortalwrt/packages/branches/openwrt-18.06/net/smartdns package/smartdns
-svn co https://github.com/kenzok8/openwrt-packages/trunk/smartdns package/smartdns
-#svn co https://github.com/garypang13/openwrt-packages/trunk/smartdns-le package/smartdns-le
-svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-smartdns package/luci-app-smartdns
 
+git clone https://github.com/pymumu/smartdns.git package/smartdns
+git clone https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
