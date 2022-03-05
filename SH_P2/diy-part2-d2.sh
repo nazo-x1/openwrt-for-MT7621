@@ -67,6 +67,10 @@ git clone --depth=1 https://github.com/destan19/OpenAppFilter
 # Add fileAssistant
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-fileassistant
 
+# Add smartdns
+git clone https://github.com/pymumu/smartdns.git
+git clone --depth=1 -b lede https://github.com/pymumu/luci-app-smartdns.git
+
 popd
 
 # del ori argon
@@ -78,8 +82,6 @@ rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf package/feeds/luci/luci-app-pushbot
 rm -rf feeds/luci/applications/luci-app-pushbot
 
-# Add smartdns
+# del ori smartdns
 rm -rf feeds/packages/net/smartdns
 
-git clone https://github.com/pymumu/smartdns.git package/smartdns
-git clone --depth=1 -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
