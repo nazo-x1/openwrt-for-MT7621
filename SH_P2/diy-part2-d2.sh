@@ -58,7 +58,7 @@ git clone --depth=1 https://github.com/zzsj0928/luci-app-pushbot
 git clone --depth=1 -b master https://github.com/vernesong/OpenClash
 
 # Add luci-theme-argon
-rm -rf ../lean/luci-theme-argon/
+rm -rf ../lean/luci-theme-argon
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 
