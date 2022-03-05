@@ -58,7 +58,6 @@ git clone --depth=1 https://github.com/zzsj0928/luci-app-pushbot
 git clone --depth=1 -b master https://github.com/vernesong/OpenClash
 
 # Add luci-theme-argon
-rm -rf ../lean/luci-theme-argon
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 
@@ -69,3 +68,20 @@ git clone --depth=1 https://github.com/destan19/OpenAppFilter
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-fileassistant
 
 popd
+
+# del ori argon
+rm -rf package/lean/luci-theme-argon
+rm -rf package/feeds/luci/luci-theme-argon
+rm -rf feeds/luci/themes/luci-theme-argon
+
+# del ori pushbot
+rm -rf package/feeds/luci/luci-app-pushbot
+rm -rf feeds/luci/applications/luci-app-pushbot
+
+# Add smartdns
+rm -rf feeds/packages/net/smartdns
+#svn co https://github.nazo.com/immortalwrt/packages/branches/openwrt-18.06/net/smartdns package/smartdns
+svn co https://github.com/kenzok8/openwrt-packages/trunk/smartdns package/smartdns
+#svn co https://github.com/garypang13/openwrt-packages/trunk/smartdns-le package/smartdns-le
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-smartdns package/luci-app-smartdns
+
