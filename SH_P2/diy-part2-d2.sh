@@ -82,4 +82,4 @@ rm -rf feeds/luci/applications/luci-app-pushbot
 rm -rf feeds/packages/net/smartdns
 
 git clone https://github.com/pymumu/smartdns.git package/smartdns
-git clone https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
+git clone --depth=1 -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
