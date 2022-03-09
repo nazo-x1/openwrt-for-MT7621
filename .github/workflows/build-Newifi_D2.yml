@@ -50,7 +50,7 @@ on:
         description: 'choose which DIY_P2 file to use'
         required: false
         default: 'config/d2.config'
- schedule:
+  schedule:
    - cron: 30 15 */5 * *
 
 env:
