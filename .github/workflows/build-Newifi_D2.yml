@@ -17,11 +17,11 @@ on:
       ssh:
         description: 'SSH connection to Actions'
         required: false
-        default: 'true'
+        default: 'false'
       UPLOAD_COWTRANSFER:
         description: 'upload to cowTransfer'
         required: false
-        default: 'true'
+        default: 'false'
       UPLOAD_WETRANSFER:
         description: 'upload to weTransfer'
         required: false
@@ -29,11 +29,11 @@ on:
       UPLOAD_FIRMWARE:
         description: 'upload firmware to Github Action output'
         required: false
-        default: 'true'
+        default: 'false'
       UPLOAD_BIN_DIR:
         description: 'upload .\bin dir to Github Action output'
         required: false
-        default: 'false'
+        default: 'true'
       UPLOAD_RELEASE:
         description: 'upload file to Github releases'
         required: false
@@ -50,8 +50,8 @@ on:
         description: 'choose which DIY_P2 file to use'
         required: false
         default: 'config/d2.config'
-#  schedule:
-#    - cron: 0 8 */5 * *
+ schedule:
+   - cron: 30 15 */5 * *
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
