@@ -57,14 +57,14 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: ${{github.event.inputs.CONFIG_FILE}}
-  DIY_P1_SH: ${{github.event.inputs.DIY_P1_SH}}
-  DIY_P2_SH: ${{github.event.inputs.DIY_P2_SH}}
-  UPLOAD_BIN_DIR: ${{github.event.inputs.UPLOAD_BIN_DIR}}
+  CONFIG_FILE: ${{github.event.inputs.CONFIG_FILE}} || 'config/d2.config'
+  DIY_P1_SH: ${{github.event.inputs.DIY_P1_SH}} || 'SH_P1/diy-part1.sh'
+  DIY_P2_SH: ${{github.event.inputs.DIY_P2_SH}} || 'SH_P2/diy-part2-d2.sh'
+  UPLOAD_BIN_DIR: ${{github.event.inputs.UPLOAD_BIN_DIR}} || 'true'
   UPLOAD_FIRMWARE: ${{github.event.inputs.UPLOAD_FIRMWARE}}
   UPLOAD_COWTRANSFER: ${{github.event.inputs.UPLOAD_COWTRANSFER}}
   UPLOAD_WETRANSFER: ${{github.event.inputs.UPLOAD_WETRANSFER}}
-  UPLOAD_RELEASE: ${{github.event.inputs.UPLOAD_RELEASE}}
+  UPLOAD_RELEASE: ${{github.event.inputs.UPLOAD_RELEASE}} || 'false'
   TZ: Asia/Shanghai
 
 jobs:
