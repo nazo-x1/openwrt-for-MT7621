@@ -18,38 +18,7 @@ on:
         description: 'SSH connection to Actions'
         required: false
         default: 'false'
-      UPLOAD_COWTRANSFER:
-        description: 'upload to cowTransfer'
-        required: false
-        default: 'false'
-      UPLOAD_WETRANSFER:
-        description: 'upload to weTransfer'
-        required: false
-        default: 'true'
-      UPLOAD_FIRMWARE:
-        description: 'upload firmware to Github Action output'
-        required: false
-        default: 'false'
-      UPLOAD_BIN_DIR:
-        description: 'upload .\bin dir to Github Action output'
-        required: false
-        default: 'true'
-      UPLOAD_RELEASE:
-        description: 'upload file to Github releases'
-        required: false
-        default: 'false'
-      DIY_P1_SH:
-        description: 'choose which DIY_P1 file to use'
-        required: false
-        default: 'SH_P1/diy-part1.sh'
-      DIY_P2_SH:
-        description: 'choose which DIY_P2 file to use'
-        required: false
-        default: 'SH_P2/diy-part2-d2.sh'
-      CONFIG_FILE:
-        description: 'choose which DIY_P2 file to use'
-        required: false
-        default: 'config/d2.config'
+
   schedule:
    - cron: 30 15 */5 * *
 
@@ -57,14 +26,14 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: ${{github.event.inputs.CONFIG_FILE}}
-  DIY_P1_SH: ${{github.event.inputs.DIY_P1_SH}}
-  DIY_P2_SH: ${{github.event.inputs.DIY_P2_SH}}
-  UPLOAD_BIN_DIR: ${{github.event.inputs.UPLOAD_BIN_DIR}}
-  UPLOAD_FIRMWARE: ${{github.event.inputs.UPLOAD_FIRMWARE}}
-  UPLOAD_COWTRANSFER: ${{github.event.inputs.UPLOAD_COWTRANSFER}}
-  UPLOAD_WETRANSFER: ${{github.event.inputs.UPLOAD_WETRANSFER}}
-  UPLOAD_RELEASE: ${{github.event.inputs.UPLOAD_RELEASE}}
+  CONFIG_FILE: config/d2.config
+  DIY_P1_SH: SH_P1/diy-part1.sh
+  DIY_P2_SH: SH_P2/diy-part2-d2.sh
+  UPLOAD_BIN_DIR: true
+  UPLOAD_FIRMWARE: false
+  UPLOAD_COWTRANSFER: false
+  UPLOAD_WETRANSFER: true
+  UPLOAD_RELEASE: false
   TZ: Asia/Shanghai
 
 jobs:
