@@ -17,10 +17,10 @@
 sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/files/bin/config_generate
 
 # Modify default SSID
-sed -i "s/DISTRIB_ID.*/DISTRIB_ID='rm-ac2100'/g" package/base-files/files/etc/openwrt_release
+sed -i "s/DISTRIB_ID.*/DISTRIB_ID='RM-AC2100'/g" package/base-files/files/etc/openwrt_release
 
 # Modify hostname
-sed -i 's/OpenWrt/rm-ac2100/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/RM-AC2100/g' package/base-files/files/bin/config_generate
 
 # Modify the version number
 sed -i "s/OpenWrt /0NAZO0 build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
