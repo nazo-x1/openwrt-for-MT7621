@@ -28,7 +28,7 @@ env:
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: config/rm-ac2100.config
   DIY_P1_SH: SH_P1/diy-part1.sh
-  DIY_P2_SH: SH_P2/diy-part2-rm-ac2100.sh
+  DIY_P2_SH: SH_P2/diy-part2-ac2100.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: false
   UPLOAD_COWTRANSFER: false
